@@ -1,0 +1,129 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 11 Configuration Reference (11.0.9) - Runtime attributes</title></head><body><div id="wrapper"><header><div id="header"><div><div><div class="logo noPrint"><a href="https://tomcat.apache.org/"><img alt="Tomcat Home" src="../images/tomcat.png"></a></div><div style="height: 1px;"></div><div class="asfLogo noPrint"><a href="https://www.apache.org/" target="_blank"><img src="../images/asf-logo.svg" alt="The Apache Software Foundation" style="width: 266px; height: 83px;"></a></div><h1>Apache Tomcat 11 Configuration Reference</h1><div class="versionInfo">
+            Version 11.0.9,
+            <time datetime="2025-07-01">Jul 1 2025</time></div><div style="height: 1px;"></div><div style="clear: left;"></div></div></div></div></header><div id="middle"><div><div id="mainLeft" class="noprint"><div><nav><div><h2>Links</h2><ul><li><a href="../index.html">Docs Home</a></li><li><a href="index.html">Config Ref. Home</a></li><li><a href="https://cwiki.apache.org/confluence/display/TOMCAT/FAQ">FAQ</a></li><li><a href="#comments_section">User Comments</a></li></ul></div><div><h2>Top Level Elements</h2><ul><li><a href="server.html">Server</a></li><li><a href="service.html">Service</a></li></ul></div><div><h2>Executors</h2><ul><li><a href="executor.html">Executor</a></li></ul></div><div><h2>Connectors</h2><ul><li><a href="http.html">HTTP/1.1</a></li><li><a href="http2.html">HTTP/2</a></li><li><a href="ajp.html">AJP</a></li></ul></div><div><h2>Containers</h2><ul><li><a href="context.html">Context</a></li><li><a href="engine.html">Engine</a></li><li><a href="host.html">Host</a></li><li><a href="cluster.html">Cluster</a></li></ul></div><div><h2>Nested Components</h2><ul><li><a href="cookie-processor.html">CookieProcessor</a></li><li><a href="credentialhandler.html">CredentialHandler</a></li><li><a href="globalresources.html">Global Resources</a></li><li><a href="jar-scanner.html">JarScanner</a></li><li><a href="jar-scan-filter.html">JarScanFilter</a></li><li><a href="listeners.html">Listeners</a></li><li><a href="loader.html">Loader</a></li><li><a href="manager.html">Manager</a></li><li><a href="realm.html">Realm</a></li><li><a href="resources.html">Resources</a></li><li><a href="sessionidgenerator.html">SessionIdGenerator</a></li><li><a href="valve.html">Valve</a></li></ul></div><div><h2>Cluster Elements</h2><ul><li><a href="cluster.html">Cluster</a></li><li><a href="cluster-manager.html">Manager</a></li><li><a href="cluster-channel.html">Channel</a></li><li><a href="cluster-membership.html">Channel/Membership</a></li><li><a href="cluster-sender.html">Channel/Sender</a></li><li><a href="cluster-receiver.html">Channel/Receiver</a></li><li><a href="cluster-interceptor.html">Channel/Interceptor</a></li><li><a href="cluster-valve.html">Valve</a></li><li><a href="cluster-deployer.html">Deployer</a></li><li><a href="cluster-listener.html">ClusterListener</a></li></ul></div><div><h2>web.xml</h2><ul><li><a href="filter.html">Filter</a></li></ul></div><div><h2>Other</h2><ul><li><a href="runtime-attributes.html">Runtime attributes</a></li><li><a href="systemprops.html">System properties</a></li><li><a href="jaspic.html">Jakarta Authentication</a></li></ul></div></nav></div></div><div id="mainRight"><div id="content"><h2>Runtime attributes</h2><h3 id="Table_of_Contents">Table of Contents</h3><div class="text">
+<ul><li><a href="#Introduction">Introduction</a></li><li><a href="#Request_attributes">Request attributes</a></li><li><a href="#ServletContext_attributes">ServletContext attributes</a></li></ul>
+</div><h3 id="Introduction">Introduction</h3><div class="text">
+  <p>The following attributes are made available to web applications at runtime.
+  Many of these attributes provide access to Tomcat internals. Attributes that
+  expose Tomcat internals may be explicitly requested by name but are often
+  deliberately not included when requesting a list of available attributes.</p>
+</div><h3 id="Request_attributes">Request attributes</h3><div class="text">
+  <p>Request attributes are made available to web applications via a call to
+  <code>ServletRequest.getAttribute(String)</code>.</p>
+  <table class="defaultTable"><tr><th style="width: 15%;">
+          Property
+        </th><th style="width: 85%;">
+          Description
+        </th></tr><tr><td><code class="propertyName">jakarta.servlet.request.cipher_suite</code></td><td>
+      <p>The Servlet specification defined attribute for the name of the cipher
+      suite being used on an SSL connection.</p>
+    </td></tr><tr><td><code class="propertyName">jakarta.servlet.request.key_size</code></td><td>
+      <p>The Servlet specification defined attribute for the key size being used
+      on an SSL connection.</p>
+    </td></tr><tr><td><code class="propertyName">jakarta.servlet.request.secure_protocol</code></td><td>
+      <p>The Servlet specification defined attribute for the name of the
+      security protocol (e.g. TLSv1.3) being used on a secured connection.</p>
+    </td></tr><tr><td><code class="propertyName">jakarta.servlet.request.ssl_session_id</code></td><td>
+      <p>The Servlet specification defined attribute for the session ID being
+      used for an SSL connection.</p>
+    </td></tr><tr><td><code class="propertyName">jakarta.servlet.request.ssl_session_mgr</code></td><td>
+      <p>A Tomcat specific extension to the Servlet specification that provides
+      the session manager being used for an SSL connection.</p>
+    </td></tr><tr><td><code class="propertyName">jakarta.servlet.request.X509Certificate</code></td><td>
+      <p>The Servlet specification defined attribute for the array of
+      X509Certificate objects representing the certificate chain presented by
+      our client, if any.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.ASYNC_SUPPORTED</code></td><td>
+      <p>Does the processing chain (Servlet, Filters, Valves) for the current
+      request support asynchronous processing? Each component in the chain must
+      support asynchronous processing for this to be <code>true</code>.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.NAMED</code></td><td>
+      <p>The name of the target Servlet for the current named dispatch, if
+      any.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.core.DISPATCHER_TYPE</code></td><td>
+      <p>The current <code>jakarta.servlet.DispatcherType</code> for the
+      request.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.core.DISPATCHER_REQUEST_PATH</code></td><td>
+      <p>The current path (Servlet Info + Path Info) to which the request has
+      been dispatched.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.filters.RemoteIpFilter.secure</code></td><td>
+      <p>The request attribute that is set to the value of
+      <code>Boolean.TRUE</code> if the RemoteIpFilter determines that this
+      request was submitted via a secure channel.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.realm.GSS_CREDENTIAL</code></td><td>
+      <p>The GSS credential for the currently authenticated user if they have
+      successfully authenticated using SPNEGO authentication.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.peerAddr</code></td><td>
+      <p>The request attribute set by the RemoteIpFilter, RemoteIpValve (and may
+      be set by other similar components) that identifies the connection peer IP
+      address.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.remoteAddr</code></td><td>
+      <p>The request attribute set by the RemoteIpFilter, RemoteIpValve (and may
+      be set by other similar components) that identifies for the connector the
+      remote IP address claimed to be associated with this request when a
+      request is received via one or more proxies. It is typically provided via
+      the X-Forwarded-For HTTP header.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.request.forwarded</code></td><td>
+      <p>The request attribute that is set to the value of
+      <code>Boolean.TRUE</code> by the RemoteIpFilter, RemoteIpValve (and other
+      similar components) that identifies a request which been forwarded via one
+      or more proxies.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.sendfile.end</code></td><td>
+      <p>The request attribute that can be used by a servlet to pass to the
+      connector the end offset (not included) of the part of a file that is to
+      be served by sendfile. The value should be <code>Long</code>. To serve the
+      complete file the value should be equal to the length of the file.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.sendfile.filename</code></td><td>
+      <p>The request attribute that can be used by a servlet to pass to the
+      connector the name of the file that is to be served by sendfile. The value
+      should be a <code>String</code> that is the canonical path of the file to
+      be served.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.sendfile.start</code></td><td>
+      <p>The request attribute that can be used by a servlet to pass to the
+      connector the start offset of the part of a file that is to be served by
+      sendfile. The value should be a <code>Long</code>. To serve the complete
+      file the value should be <code>Long.valueOf(0)</code>.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.sendfile.support</code></td><td>
+      <p>The request attribute that is set to the value of
+      <code>Boolean.TRUE</code> if connector processing this request supports
+      the use of sendfile.</p>
+    </td></tr></table>
+</div><h3 id="ServletContext_attributes">ServletContext attributes</h3><div class="text">
+  <p>ServletContext attributes are made available to web applications via a call
+  to <code>ServletContext.getAttribute(String)</code>.</p>
+  <table class="defaultTable"><tr><th style="width: 15%;">
+          Property
+        </th><th style="width: 85%;">
+          Description
+        </th></tr><tr><td><code class="propertyName">org.apache.catalina.CredentialHandler</code></td><td>
+      <p>The CredentialHandler (if any) associated with the Realm (if any)
+      that has been explicitly associated with the Context. Realms associated
+      with parent containers (Hosts or Engines) are not considered.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.deploy.alt_dd</code></td><td>
+      <p>The alternate deployment descriptor for this web application.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.jsp_classpath</code></td><td>
+      <p>The class path for our application class loader (as an object of type
+      String), delimited with the appropriate path delimiter for the
+      platform.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.resources</code></td><td>
+      <p>The WebResourceRoot which is associated with the context.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.catalina.webappVersion</code></td><td>
+      <p>The web application version string (the text that appears after ##
+      when parallel deployment is configured).</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.InstanceManager</code></td><td>
+      <p>The InstanceManager used to create Servlets, Filters, Listeners etc.
+      for the web application.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.JarScanner</code></td><td>
+      <p>The JarScanner instance used to scan the web application for
+      annotations, TLDs, web fragments and similar features.</p>
+    </td></tr><tr><td><code class="propertyName">org.apache.tomcat.util.threads.ScheduledThreadPoolExecutor</code></td><td>
+      <p>The utility executor for this Context.</p>
+    </td></tr></table>
+</div></div></div></div></div><footer><div id="footer">
+    Copyright &copy; 1999-2025, The Apache Software Foundation
+    <br>
+    Apache Tomcat, Tomcat, Apache, the Apache Tomcat logo and the Apache logo
+    are either registered trademarks or trademarks of the Apache Software
+    Foundation.
+    </div></footer></div></body></html>

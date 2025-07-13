@@ -1,0 +1,71 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 11 Architecture (11.0.9) - Request Process Flow</title><meta name="author" content="Yoav Shapira"></head><body><div id="wrapper"><header><div id="header"><div><div><div class="logo noPrint"><a href="https://tomcat.apache.org/"><img alt="Tomcat Home" src="../images/tomcat.png"></a></div><div style="height: 1px;"></div><div class="asfLogo noPrint"><a href="https://www.apache.org/" target="_blank"><img src="../images/asf-logo.svg" alt="The Apache Software Foundation" style="width: 266px; height: 83px;"></a></div><h1>Apache Tomcat 11 Architecture</h1><div class="versionInfo">
+            Version 11.0.9,
+            <time datetime="2025-07-01">Jul 1 2025</time></div><div style="height: 1px;"></div><div style="clear: left;"></div></div></div></div></header><div id="middle"><div><div id="mainLeft" class="noprint"><div><nav><div><h2>Links</h2><ul><li><a href="../index.html">Docs Home</a></li><li><a href="index.html">Architecture Home</a></li><li><a href="https://cwiki.apache.org/confluence/display/TOMCAT/FAQ">FAQ</a></li><li><a href="#comments_section">User Comments</a></li></ul></div><div><h2>Contents</h2><ul><li><a href="index.html">Contents</a></li><li><a href="overview.html">Overview</a></li><li><a href="startup.html">Server Startup</a></li><li><a href="requestProcess.html">Request Process</a></li></ul></div></nav></div></div><div id="mainRight"><div id="content"><h2>Request Process Flow</h2><h3 id="Introduction">Introduction</h3><div class="text">
+<p>
+This page describes how requests flow through Tomcat during processing. Requests
+start processing in an endpoint, then get passed to the protocol and then the
+Coyote adapter which is the common entry point for all servlet request
+processing.
+</p>
+<p>
+The UML diagrams do not show every detail of Tomcat's internal processing. They
+are intended to show the key elements of the processing chain.
+</p>
+</div><h3 id="Endpoint_implementations">Endpoint implementations</h3><div class="text">
+<p>
+UML diagrams have been created for each Endpoint implementation to show how
+requests flow from the endpoint to the protocol.
+</p>
+<p>
+<a href="requestProcess/11_nio.png">Diagram 1.1</a> shows how requests received via
+an NIO based endpoint are processed upto the point they reach the processor
+instance.
+</p>
+<p>
+NIO2 - TBD.
+</p>
+</div><h3 id="Protocols">Protocols</h3><div class="text">
+<p>
+UML diagrams have been created for each protocol to show how requests flow from
+the processor instance to the CoyoteAdapter.
+</p>
+<p>
+<a href="requestProcess/21_http11.png">Diagram 2.1</a> shows how HTTP/0.9, HTTP/1.0
+and HTTP/1.1 requests are processed.
+</p>
+<p>
+HTTP/2 - TBD.
+</p>
+<p>
+AJP - TBD.
+</p>
+</div><h3 id="Servlet_engine">Servlet engine</h3><div class="text">
+<p>
+<a href="requestProcess/31_synchronous.png">Diagram 3.1</a> shows synchronous
+Servlet requests are processed.
+</p>
+<p>
+Asynchronous - TBD.
+</p>
+</div><h3 id="Authentication">Authentication</h3><div class="text">
+<p>
+<a href="requestProcess/41_basic.png">Diagram 4.1</a> shows how BASIC
+authentication is processed.
+</p>
+<p>
+DIGEST - TBD.
+</p>
+<p>
+FORM - TBD.
+</p>
+<p>
+Jakarta Authentication (JASPIC) - TBD.
+</p>
+</div></div></div></div></div><footer><div id="footer">
+    Copyright &copy; 1999-2025, The Apache Software Foundation
+    <br>
+    Apache Tomcat, Tomcat, Apache, the Apache Tomcat logo and the Apache logo
+    are either registered trademarks or trademarks of the Apache Software
+    Foundation.
+    </div></footer></div></body></html>
