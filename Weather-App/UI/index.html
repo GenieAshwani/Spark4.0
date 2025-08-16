@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="weather-container">
+      <!-- Search Form -->
+      <div class="search-section">
+        <form id="weather-form" class="search-form">
+          <div class="form-group">
+            <label for="city-input">City</label>
+            <input
+              type="text"
+              id="city-input"
+              placeholder="Enter city name"
+              value="Agra"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="days-input">Forecast Days</label>
+            <select id="days-input" required>
+              <option value="3">3 Days</option>
+              <option value="5">5 Days</option>
+              <option value="7" selected>7 Days</option>
+              <option value="10">10 Days</option>
+            </select>
+          </div>
+          <button type="submit" class="search-btn">Get Weather</button>
+        </form>
+      </div>
+
+      <div id="weather-content" class="welcome">
+        <div class="welcome-message">
+          <h2>🌤️ Weather Dashboard</h2>
+          <p>Enter a city name and select forecast days to get started!</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
