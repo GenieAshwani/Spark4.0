@@ -40,13 +40,17 @@ public class WebSecurity {
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-        return  config.getAuthenticationManager();
+        AuthenticationManager authenticationManager = config.getAuthenticationManager();
+        System.out.println("AuthenticationManager called.......");
+        return authenticationManager;
     }
 
 
     @Bean
     public PasswordEncoder passwordEncoder()
     {
-        return new BCryptPasswordEncoder();
+        BCryptPasswordEncoder cryptPasswordEncoder = new BCryptPasswordEncoder();
+        System.out.println("passwordEncoder method called....");
+        return cryptPasswordEncoder;
     }
 }

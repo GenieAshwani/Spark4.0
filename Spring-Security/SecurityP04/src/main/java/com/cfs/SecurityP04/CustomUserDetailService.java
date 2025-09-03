@@ -16,12 +16,14 @@ public class CustomUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        System.out.println("loadUserByUsername method called....");
         AppUser user=userRepository.findByUsername(username)
                 .orElseThrow(()->new UsernameNotFoundException("User not found "+username));
         System.out.println("Found username = "+user.getUsername() + " / " +user.getPassword());
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),user.isEnabled(),true,true,true,
-                user.getRoles().stream().map(role->new SimpleGrantedAuthority(role.getName())).toList()
-        );
+                //user.getRoles().stream().map(role->new SimpleGrantedAuthority(role.getName())).toList()
+                user.getRoles().stream().map(role -> new SimpleGrantedAuthority("ROLE_" +role.getName())).toList());
+
     }
 }

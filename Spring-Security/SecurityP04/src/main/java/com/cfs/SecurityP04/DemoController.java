@@ -24,12 +24,14 @@ public class DemoController {
     @GetMapping("/public")
     public String publicMethod()
     {
+        System.out.println("public method called....");
         return "This is public method";
     }
 
     @GetMapping("/admin")
     public String adminMethod()
     {
+        System.out.println("admin method called....");
         return "This is admin method";
     }
 
