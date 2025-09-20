@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spark 3.0 Course Checkout</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="payment-section">
+        <h1>Payment Details</h1>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter Name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter Email" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone (WhatsApp enabled to access later)</label>
+          <div class="phone-input">
+            <div class="flag">
+              <img src="image.png" alt="IN" />
+              <span>+91</span>
+            </div>
+            <input type="tel" id="phone" placeholder="Enter Phone" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="coupon">Coupon Code</label>
+          <div class="coupon-container">
+            <input type="text" id="coupon" value="EARLYBIRD" />
+            <span class="clear-coupon"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="success-message">
+            <i class="fas fa-check-circle"></i> Offer applied successfully
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-row">
+            <span>Original Price</span>
+            <span>₹9,999.00</span>
+          </div>
+          <div class="price-row">
+            <span>Discount</span>
+            <span class="negative-amount">-₹6,049.40</span>
+          </div>
+          <div class="price-row total-row">
+            <span>Total</span>
+            <span>₹3,949.60</span>
+          </div>
+        </div>
+
+        <button class="pay-button">
+          <i class="fas fa-lock"></i> Pay ₹3,950
+        </button>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-google-pay"></i>
+          <i class="fab fa-apple-pay"></i>
+        </div>
+        <div class="secure-text">
+          <i class="fas fa-shield-alt"></i> Secure payment - 100% safe checkout
+        </div>
+      </div>
+
+      <div class="course-section">
+        <h1 class="course-title">
+          Spark 3.0 : Job Ready Java Full Stack LIVE Course
+        </h1>
+
+        <div class="course-banner">
+          <img
+            src="https://com.rpy.club/_next/image?url=https%3A%2F%2Fd22fm4ukds3x17.cloudfront.net%2Fuser_course_file_6544b19ee0c4c40c38930239%2F2024-11-30%2FZp9YyPZqZE.png&w=3840&q=75"
+            alt="Java Course Banner"
+          />
+          <div class="live-badge">LIVE</div>
+        </div>
+
+        <div class="course-description">
+          This 4-month course is tailored to equip you with the skills needed to
+          build both the backend (the behind-the-scenes functionality) and the
+          frontend (the user interface) of web applications.
+        </div>
+
+        <div class="instructor-info">
+          <i class="fas fa-user-tie"></i> Experienced Instructor with 6+ years
+          in Java development
+        </div>
+
+        <div class="course-highlights">
+          <div class="highlight-item">
+            <i class="fas fa-calendar-alt"></i>
+            <div>
+              <strong>Duration</strong>
+              <span>4 months</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Hours</strong>
+              <span>120+</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-users"></i>
+            <div>
+              <strong>Batch Size</strong>
+              <span>Limited seats</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-features">
+          <h3>Course includes:</h3>
+          <div class="feature-item">
+            <span class="feature-check"><i class="fas fa-check"></i></span>
+            <span>Live Masterclasses</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check"><i class="fas fa-check"></i></span>
+            <span>Real time projects</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check"><i class="fas fa-check"></i></span>
+            <span>Access to recording</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check"><i class="fas fa-check"></i></span>
+            <span>120+ hours of core teaching with projects discussion</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check"><i class="fas fa-check"></i></span>
+            <span>Extra Assignments and Quiz to practice</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check"><i class="fas fa-check"></i></span>
+            <span>Bonus Sessions</span>
+          </div>
+
+          <div class="show-more">
+            <span id="show-more-text">Show more</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

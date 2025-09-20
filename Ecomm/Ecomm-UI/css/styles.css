@@ -1,0 +1,197 @@
+/* =======================
+   Global Theme Colors
+   ======================= */
+   :root {
+    --primary-color: #ff6600; /* Vibrant Orange */
+    --secondary-color: #111; /* Dark Gray Background */
+    --text-color: #ddd; /* Light Text */
+    --footer-text: #ccc; /* Footer Text (Improved) */
+    --hover-color: #ff8533; /* Lighter Orange */
+    --white: #fff; /* White Text */
+    --navbar-bg: #222; /* Slightly lighter for navbar */
+  }
+  
+  /* =======================
+       Navbar Styling (Fixed)
+       ======================= */
+  .navbar {
+    background: var(--navbar-bg) !important; /* Ensures visibility */
+    padding: 15px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Adds slight elevation */
+    z-index: 1000; /* Ensures navbar stays on top */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color) !important;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white) !important;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: var(--hover-color) !important;
+  }
+  
+  /* Fix navbar toggler icon visibility */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    filter: invert(1); /* Makes toggler icon visible */
+  }
+  
+  /* =======================
+       Hero Section (Carousel)
+       ======================= */
+  #heroCarousel .carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .carousel-caption h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--white);
+  }
+  
+  .carousel-caption p {
+    font-size: 18px;
+    color: var(--text-color);
+  }
+  
+  .carousel-caption .btn {
+    margin-top: 10px;
+    background: var(--primary-color);
+    border: none;
+    color: var(--white);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .carousel-caption .btn:hover {
+    background: var(--hover-color);
+  }
+  
+  /* Ensure all carousel images are the same height without cropping */
+  /* Ensure all carousel images have the same height and cover the container */
+  
+  /* Make the carousel container flexible to adjust to image height */
+  
+  /* =======================
+       Product Section
+       ======================= */
+  .section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+  
+  /* Product Cards */
+  .card {
+    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 10px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    box-shadow: 0px 4px 8px rgba(255, 102, 0, 0.2); /* Adds slight orange glow */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 15px rgba(255, 102, 0, 0.3);
+  }
+  
+  /* Product Image */
+  .card-img-top {
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.1);
+  }
+  
+  /* Add to Cart Button */
+  .btn-primary {
+    background: var(--primary-color);
+    border: none;
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover .btn-primary {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+  
+  .btn-primary:hover {
+    background: var(--hover-color);
+  }
+  
+  /* =======================
+       Footer Styling (Enhanced)
+       ======================= */
+  .footer {
+    background: var(--secondary-color);
+    color: var(--footer-text);
+    padding: 50px 0;
+    font-size: 14px;
+    text-align: center; /* Ensures alignment */
+  }
+  
+  .footer h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-list li {
+    margin-bottom: 10px;
+    color: var(--footer-text);
+    line-height: 1.6;
+  }
+  
+  .footer-list a {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-list a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Copyright */
+  .footer .copyright {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--footer-text);
+  }

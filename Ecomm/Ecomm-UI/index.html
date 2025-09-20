@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoplane | Premium eCommerce</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">SHOPIFY</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Clothing</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Accessories</a>
+            </li>
+            <!-- Cart Icon in Navbar -->
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">0</span>
+                <!-- Ensure this span exists -->
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO BANNER: CAROUSEL -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+
+      <div class="carousel-inner">
+        <!-- Banner 1 -->
+        <div class="carousel-item active">
+          <img src="img/img1.png" class="d-block w-100" alt="Fashion" />
+          <div class="carousel-caption">
+            <h2>PUMA Flat 30% Offer</h2>
+            <p>Upgrade your wardrobe with the latest collection</p>
+            <a href="#" class="btn btn-primary">Shop Now</a>
+          </div>
+        </div>
+
+        <!-- Banner 2 -->
+        <div class="carousel-item">
+          <img src="img/img2.png" class="d-block w-100" alt="Shoes" />
+          <div class="carousel-caption">
+            <h2>Exclusive Footwear Collection</h2>
+            <p>Get the best deals on top brands</p>
+            <a href="#" class="btn btn-primary">Shop Now</a>
+          </div>
+        </div>
+
+        <!-- Banner 3 -->
+        <div class="carousel-item">
+          <img src="img/img3.png" class="d-block w-100" alt="Watches" />
+          <div class="carousel-caption">
+            <h2>Luxury Watches Collection</h2>
+            <p>Stylish and premium designs for all occasions</p>
+            <a href="#" class="btn btn-primary">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <!-- PRODUCT CATEGORIES -->
+    <div class="container mt-5">
+      <!-- Trending Products -->
+      <h2 class="section-title">🔥 Trending Products</h2>
+      <div id="trending-products" class="row"></div>
+
+      <!-- Clothing -->
+      <h2 class="section-title mt-5">👗 Clothing Collection</h2>
+      <div id="clothing-products" class="row"></div>
+
+      <!-- Electronics -->
+      <h2 class="section-title mt-5">💻 Electronics & Gadgets</h2>
+      <div id="electronics-products" class="row"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <!-- Online Store -->
+          <div class="col-md-3">
+            <h5>ONLINE STORE</h5>
+            <ul class="footer-list">
+              <li><a href="#">Men Clothing</a></li>
+              <li><a href="#">Women Clothing</a></li>
+              <li><a href="#">Men Accessories</a></li>
+              <li><a href="#">Women Accessories</a></li>
+            </ul>
+          </div>
+
+          <!-- Helpful Links -->
+          <div class="col-md-3">
+            <h5>HELPFUL LINKS</h5>
+            <ul class="footer-list">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Brand Partners -->
+          <div class="col-md-3">
+            <h5>BRAND PARTNERS</h5>
+            <ul class="footer-list">
+              <li>Zara</li>
+              <li>Pantaloons</li>
+              <li>Levi's</li>
+              <li>UCB</li>
+              <li>+ Many More</li>
+            </ul>
+          </div>
+
+          <!-- Address -->
+          <div class="col-md-3">
+            <h5>ADDRESS</h5>
+            <ul class="footer-list">
+              <li>Building 101</li>
+              <li>Central Avenue</li>
+              <li>LA - 902722</li>
+              <li>United States</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright Section -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="copyright">
+            © 2024 Shopify | Designed by <strong>Ashwani Upadhyay</strong>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Product Card Example -->
+
+    <!-- JavaScript & Bootstrap -->
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      loadProducts();
+    </script>
+  </body>
+</html>
